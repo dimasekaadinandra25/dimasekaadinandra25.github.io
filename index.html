@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dimas Eka Adinandra - Backend Software Engineer</title>
+<meta name="description" content="Backend engineer, 4+ years in Go, Python, PHP and TypeScript. APIs, microservices, real-time pipelines. Open to backend and full-stack roles with 482 sponsorship.">
+<meta name="author" content="Dimas Eka Adinandra">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dimas Eka Adinandra - Backend Software Engineer">
+<meta property="og:description" content="4+ years building backends in Go, Python and TypeScript. Open to backend and full-stack roles with 482 sponsorship.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dimas Eka Adinandra",
+  "jobTitle": "Backend Software Engineer",
+  "email": "mailto:dimasekaadinandra@gmail.com",
+  "address": { "@type": "PostalAddress", "addressCountry": "ID" },
+  "sameAs": [
+    "https://www.linkedin.com/in/dimas-eka-adinandra-3b30071b9/",
+    "https://github.com/dimasekaadinandra25"
+  ],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Politeknik Negeri Malang"
+  },
+  "knowsAbout": [
+    "Go (Golang)", "Python", "PHP", "TypeScript", "JavaScript",
+    "Echo", "Laravel", "HonoJS", "AngularJS", "gRPC",
+    "RESTful API", "Microservices", "Repository Pattern", "Hexagonal Architecture",
+    "PostgreSQL", "MySQL", "MongoDB", "Redis",
+    "Docker", "Git", "CI/CD",
+    "Database Query Optimisation", "Concurrent Processing",
+    "Unit Testing", "Integration Testing", "Code Review",
+    "Payment Gateway Integration", "RAG Pipelines", "AI Workflow Automation"
+  ],
+  "worksFor": { "@type": "Organization", "name": "Venturo" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<style>
+/* ---------- tokens ---------- */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f7f8fa;
+  --fg: #0f1419;
+  --muted: #5b6472;
+  --faint: #8b94a3;
+  --line: #e6e8ec;
+  --line-soft: #f0f1f4;
+  --card: #ffffff;
+  --accent: #4f46e5;
+  --accent-soft: #eef2ff;
+  --glow-a: rgba(79, 70, 229, 0.10);
+  --glow-b: rgba(14, 165, 233, 0.08);
+  --shadow: 0 1px 2px rgba(15, 20, 25, 0.04), 0 8px 24px -12px rgba(15, 20, 25, 0.12);
+  --shadow-lift: 0 2px 4px rgba(15, 20, 25, 0.04), 0 16px 32px -16px rgba(15, 20, 25, 0.18);
+  --max: 60rem;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0c10;
+    --bg-soft: #0f1218;
+    --fg: #e8ecf1;
+    --muted: #98a1b0;
+    --faint: #6b7483;
+    --line: #1c212b;
+    --line-soft: #161a22;
+    --card: #10141b;
+    --accent: #818cf8;
+    --accent-soft: #1a1d33;
+    --glow-a: rgba(129, 140, 248, 0.14);
+    --glow-b: rgba(56, 189, 248, 0.08);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+    --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.3), 0 16px 32px -16px rgba(0, 0, 0, 0.6);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a0c10;
+  --bg-soft: #0f1218;
+  --fg: #e8ecf1;
+  --muted: #98a1b0;
+  --faint: #6b7483;
+  --line: #1c212b;
+  --line-soft: #161a22;
+  --card: #10141b;
+  --accent: #818cf8;
+  --accent-soft: #1a1d33;
+  --glow-a: rgba(129, 140, 248, 0.14);
+  --glow-b: rgba(56, 189, 248, 0.08);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.3), 0 16px 32px -16px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- base ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+a { color: var(--accent); text-decoration: none; }
+h1, h2, h3 { line-height: 1.2; letter-spacing: -0.02em; }
+::selection { background: var(--accent); color: #fff; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* ---------- nav ---------- */
+nav {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s;
+}
+nav.stuck { border-bottom-color: var(--line); }
+nav .wrap { display: flex; align-items: center; gap: 0.25rem; height: 4rem; }
+.brand {
+  margin-right: auto;
+  display: flex; align-items: center; gap: 0.625rem;
+  font-weight: 600; font-size: 0.9375rem; letter-spacing: -0.01em;
+  color: var(--fg); white-space: nowrap;
+}
+.mark {
+  display: grid; place-items: center;
+  width: 1.75rem; height: 1.75rem;
+  border-radius: 0.5rem;
+  background: var(--accent); color: #fff;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0;
+}
+nav .nav-link {
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  color: var(--muted);
+  font-size: 0.875rem; font-weight: 500;
+  transition: color 0.15s, background 0.15s;
+}
+nav .nav-link:hover { color: var(--fg); background: var(--bg-soft); }
+nav .nav-link.active { color: var(--accent); }
+@media (max-width: 44rem) { nav .nav-link { display: none; } }
+
+.theme-btn {
+  display: grid; place-items: center;
+  width: 2.125rem; height: 2.125rem;
+  margin-left: 0.5rem;
+  border: 1px solid var(--line); border-radius: 0.5rem;
+  background: transparent; color: var(--muted);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.theme-btn:hover { color: var(--fg); border-color: var(--faint); background: var(--bg-soft); }
+.theme-btn svg { width: 1rem; height: 1rem; }
+.icon-sun { display: none; }
+:root[data-theme="dark"] .icon-sun { display: block; }
+:root[data-theme="dark"] .icon-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .icon-sun { display: block; }
+  :root:not([data-theme="light"]) .icon-moon { display: none; }
+}
+
+/* ---------- hero ---------- */
+header {
+  position: relative;
+  padding: 6rem 0 4rem;
+  overflow: hidden;
+}
+header::before {
+  content: "";
+  position: absolute; inset: -40% 0 auto -10%;
+  height: 38rem; pointer-events: none;
+  background:
+    radial-gradient(42rem 24rem at 20% 40%, var(--glow-a), transparent 70%),
+    radial-gradient(34rem 20rem at 78% 20%, var(--glow-b), transparent 70%);
+}
+header .wrap { position: relative; }
+.badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  max-width: 100%;
+  margin-bottom: 1.75rem; padding: 0.375rem 0.875rem 0.375rem 0.75rem;
+  border: 1px solid var(--line); border-radius: 2rem;
+  background: var(--card);
+  font-size: 0.8125rem; font-weight: 500; color: var(--muted);
+  box-shadow: var(--shadow);
+}
+.dot {
+  flex: none;
+  width: 0.4375rem; height: 0.4375rem; border-radius: 50%;
+  background: #22c55e; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+  animation: pulse 2.4s ease-out infinite;
+}
+@keyframes pulse {
+  70% { box-shadow: 0 0 0 0.4375rem rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+header h1 {
+  margin: 0 0 0.875rem;
+  font-size: clamp(2.5rem, 7vw, 4.25rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.role {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.0625rem, 2.4vw, 1.3125rem);
+  font-weight: 600; color: var(--accent);
+  letter-spacing: -0.015em;
+}
+.bio {
+  margin: 0 0 1rem; max-width: 42rem;
+  color: var(--muted); font-size: 1.0625rem;
+}
+.bio strong { color: var(--fg); font-weight: 600; }
+.meta {
+  display: flex; flex-wrap: wrap; gap: 0.375rem 1.25rem;
+  margin: 1.5rem 0 2rem;
+  color: var(--faint); font-size: 0.875rem;
+}
+.meta span { display: inline-flex; align-items: center; gap: 0.4375rem; }
+.meta svg { width: 0.9375rem; height: 0.9375rem; opacity: 0.8; }
+
+.links { display: flex; flex-wrap: wrap; gap: 0.625rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.625rem 1.125rem;
+  border: 1px solid var(--line); border-radius: 0.625rem;
+  background: var(--card); color: var(--fg);
+  font-size: 0.9375rem; font-weight: 500;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-lift); border-color: var(--faint); }
+.btn svg { width: 1rem; height: 1rem; }
+.btn.primary {
+  background: var(--accent); border-color: var(--accent); color: #fff;
+}
+.btn.primary:hover { border-color: var(--accent); }
+
+/* ---------- stats ---------- */
+.stats {
+  display: grid; gap: 1px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 3.5rem;
+  background: var(--line);
+  border: 1px solid var(--line); border-radius: 0.875rem;
+  overflow: hidden;
+}
+.stats div { padding: 1.25rem 1.25rem; background: var(--bg); }
+.stats b {
+  display: block;
+  font-size: clamp(1.375rem, 3.2vw, 1.75rem); font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.stats small { color: var(--faint); font-size: 0.8125rem; line-height: 1.45; display: block; margin-top: 0.125rem; }
+@media (max-width: 40rem) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---------- sections ---------- */
+section { padding: 4.5rem 0; border-top: 1px solid var(--line-soft); }
+.sec-head { display: flex; align-items: baseline; gap: 0.875rem; margin-bottom: 2.25rem; }
+.sec-head span {
+  font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
+  color: var(--accent); letter-spacing: 0;
+}
+.sec-head h2 {
+  margin: 0; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em;
+}
+
+/* ---------- projects ---------- */
+.grid { display: grid; gap: 1.125rem; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); }
+article {
+  position: relative;
+  display: flex; flex-direction: column;
+  padding: 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--line); border-radius: 0.875rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+article:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
+article h3 { margin: 0 0 0.25rem; font-size: 1.125rem; font-weight: 650; }
+article .kind { margin: 0 0 1rem; color: var(--faint); font-size: 0.8125rem; font-weight: 500; }
+article ul { margin: 0 0 1.25rem; padding: 0; list-style: none; color: var(--muted); font-size: 0.9375rem; }
+article li { position: relative; padding-left: 1.125rem; margin-bottom: 0.625rem; }
+article li::before {
+  content: ""; position: absolute; left: 0; top: 0.6875rem;
+  width: 0.3125rem; height: 0.3125rem; border-radius: 50%;
+  background: var(--accent); opacity: 0.55;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-top: auto; }
+.tags span {
+  padding: 0.1875rem 0.5625rem; border-radius: 0.375rem;
+  background: var(--accent-soft); color: var(--accent);
+  font-family: var(--mono); font-size: 0.6875rem; font-weight: 500;
+}
+
+/* ---------- timeline ---------- */
+.timeline { position: relative; padding-left: 1.75rem; }
+.timeline::before {
+  content: ""; position: absolute; left: 0.3125rem; top: 0.5rem; bottom: 0.5rem;
+  width: 1px; background: linear-gradient(var(--line), var(--line-soft));
+}
+.job { position: relative; padding-bottom: 2.5rem; }
+.job:last-child { padding-bottom: 0; }
+.job::before {
+  content: ""; position: absolute; left: -1.75rem; top: 0.5rem;
+  width: 0.6875rem; height: 0.6875rem; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--accent);
+}
+.job .when {
+  display: inline-block; margin-bottom: 0.375rem;
+  font-family: var(--mono); font-size: 0.75rem; color: var(--faint);
+}
+.job h3 { margin: 0 0 0.1875rem; font-size: 1.0625rem; font-weight: 650; }
+.job .where { color: var(--muted); font-size: 0.9375rem; font-weight: 500; }
+.job ul { margin: 0.875rem 0 0; padding: 0; list-style: none; color: var(--muted); font-size: 0.9375rem; }
+.job li { position: relative; padding-left: 1.125rem; margin-bottom: 0.5rem; }
+.job li::before {
+  content: ""; position: absolute; left: 0; top: 0.6875rem;
+  width: 0.3125rem; height: 0.3125rem; border-radius: 50%;
+  background: var(--faint); opacity: 0.6;
+}
+.job li b { color: var(--fg); font-weight: 600; }
+
+/* ---------- skills ---------- */
+.skills { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 0.875rem; overflow: hidden; }
+.skills > div {
+  display: grid; grid-template-columns: 11rem 1fr; gap: 1.25rem;
+  padding: 1rem 1.25rem; background: var(--bg);
+}
+.skills h3 {
+  margin: 0; font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
+  color: var(--faint); letter-spacing: 0; text-transform: uppercase; padding-top: 0.1875rem;
+}
+.skills p { margin: 0; color: var(--fg); font-size: 0.9375rem; }
+@media (max-width: 36rem) {
+  .skills > div { grid-template-columns: 1fr; gap: 0.25rem; }
+}
+
+/* ---------- contact ---------- */
+.contact-card {
+  padding: 2.5rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line); border-radius: 1.125rem;
+}
+.contact-card h3 { margin: 0 0 0.5rem; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em; }
+.contact-card p { margin: 0 0 1.75rem; max-width: 36rem; color: var(--muted); }
+.contact-card p strong { color: var(--fg); font-weight: 600; }
+
+footer {
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--line-soft);
+  color: var(--faint); font-size: 0.8125rem;
+}
+footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content: space-between; }
+
+/* ---------- reveal ---------- */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .dot { animation: none; }
+  * { transition-duration: 0.01ms !important; }
+}
+
+/* ---------- print: single column, plain text, ATS-parseable ---------- */
+.print-only, .meta span.print-only { display: none; }
+@media print {
+  @page { margin: 14mm; }
+  nav, .theme-btn, .badge, .links, .stats, .sec-head span, header::before { display: none !important; }
+  .print-only, .meta span.print-only { display: block; }
+
+  html, body { background: #fff !important; color: #000 !important; font-size: 10.5pt; line-height: 1.4; }
+  .wrap { max-width: none; padding: 0; }
+  a { color: #000 !important; text-decoration: none; }
+
+  header { padding: 0 0 0.5rem; }
+  header h1 { font-size: 20pt; }
+  .role { font-size: 11pt; color: #000 !important; }
+  .bio { max-width: none; color: #000 !important; font-size: 10.5pt; }
+  .meta { margin: 0.5rem 0; color: #000 !important; }
+  .meta svg { display: none; }
+  .meta span { display: block; }
+
+  section { padding: 0.75rem 0 0; border-top: 1px solid #999; }
+  .sec-head { margin-bottom: 0.5rem; }
+  .sec-head h2 { font-size: 12pt; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  /* one column, no cards, no decoration */
+  .grid, .skills { display: block; gap: 0; background: none; border: 0; border-radius: 0; }
+  article, .contact-card {
+    padding: 0; margin-bottom: 0.75rem;
+    background: none !important; border: 0; border-radius: 0; box-shadow: none !important;
+    break-inside: avoid;
+  }
+  article h3, .job h3 { font-size: 11pt; }
+  article .kind, .job .where, .job .when { color: #000 !important; }
+
+  .timeline { padding-left: 0; }
+  .timeline::before, .job::before { display: none; }
+  .job { padding-bottom: 0.75rem; break-inside: avoid; }
+  .job .when { font-family: inherit; font-size: 10pt; }
+
+  article ul, .job ul { color: #000 !important; }
+  article li, .job li { padding-left: 0.9rem; margin-bottom: 0.15rem; }
+  article li::before, .job li::before { background: #000; opacity: 1; top: 0.5rem; }
+
+  .tags { margin-top: 0.25rem; }
+  .tags span {
+    padding: 0; margin-right: 0.5rem;
+    background: none !important; color: #000 !important; font-family: inherit; font-size: 9.5pt;
+  }
+  .tags span::after { content: ""; }
+
+  .skills > div { display: block; padding: 0 0 0.25rem; background: none; }
+  .skills h3 { display: inline; font-family: inherit; font-size: 10.5pt; color: #000 !important; text-transform: none; }
+  .skills h3::after { content: ": "; }
+  .skills p { display: inline; color: #000 !important; }
+
+  .contact-card h3 { display: none; }
+  .contact-card p { max-width: none; color: #000 !important; }
+  footer { padding: 0.5rem 0 0; color: #000 !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mark">DA</span>Dimas Eka Adinandra</a>
+    <a class="nav-link" href="#work">Projects</a>
+    <a class="nav-link" href="#experience">Experience</a>
+    <a class="nav-link" href="#skills">Skills</a>
+    <a class="nav-link" href="#contact">Contact</a>
+    <button class="theme-btn" id="theme" type="button" aria-label="Toggle colour theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="badge"><span class="dot"></span> Open to backend &amp; full-stack roles, 482 sponsorship</div>
+    <h1>Dimas Eka Adinandra</h1>
+    <p class="role">Backend Software Engineer &middot; Go, Python, TypeScript</p>
+    <p class="bio">
+      I've spent <strong>4+ years</strong> on backend systems, mostly in Go (Golang). RESTful APIs and
+      microservices, a real-time voice pipeline, a healthcare platform, a few payment gateway
+      integrations. The work usually comes down to the same handful of things: PostgreSQL queries that
+      don't crawl, services that stay up, and code the next person can change without breaking something.
+      I pick up full-stack work in TypeScript and PHP when that's what gets a feature out the door.
+    </p>
+    <div class="meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Indonesia
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        dimasekaadinandra@gmail.com
+      </span>
+      <span class="print-only">linkedin.com/in/dimas-eka-adinandra</span>
+      <span class="print-only">github.com/dimasekaadinandra25</span>
+    </div>
+    <div class="links">
+      <a class="btn primary" href="mailto:dimasekaadinandra@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        Email me
+      </a>
+      <a class="btn" href="https://www.linkedin.com/in/dimas-eka-adinandra-3b30071b9/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.64h.05A4.17 4.17 0 0 1 16.6 8.7c4 0 4.4 2.6 4.4 6V21h-4v-5.5c0-1.3 0-3-1.9-3s-2.1 1.44-2.1 2.9V21H9z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn" href="https://github.com/dimasekaadinandra25" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.26.8-.57v-2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.81.57A12 12 0 0 0 12 .5z"/></svg>
+        GitHub
+      </a>
+      <a class="btn" href="resume.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg>
+        Resume (PDF)
+      </a>
+    </div>
+
+    <div class="stats reveal">
+      <div><b>4+</b><small>Years on backend work</small></div>
+      <div><b>~40%</b><small>Faster API responses</small></div>
+      <div><b>~50%</b><small>Fewer production incidents</small></div>
+      <div><b>&lt;500ms</b><small>Voice pipeline latency</small></div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head"><span>01</span><h2>Projects</h2></div>
+    <div class="grid">
+
+      <article class="reveal">
+        <h3>Cavos</h3>
+        <p class="kind">Call operation platform with AI</p>
+        <ul>
+          <li>Go and Python services that process voice in real time, staying under 500ms with plenty of calls running at once.</li>
+          <li>Split into microservices so the voice streams could scale sideways and one bad service didn't take the rest down with it.</li>
+          <li>Put an AI step into the QA review flow, which took roughly 60% of the manual review off the ops team.</li>
+          <li>A central activity log for user and system events across the apps, so anyone debugging could see what happened and when.</li>
+          <li>The billing side: usage tracking, the billing runs themselves, and the integration with the other services.</li>
+        </ul>
+        <div class="tags"><span>Go</span><span>Python</span><span>Microservices</span><span>Real-time</span><span>AI</span><span>Billing</span></div>
+      </article>
+
+      <article class="reveal">
+        <h3>Lazisnu</h3>
+        <p class="kind">Donation &amp; payment platform</p>
+        <ul>
+          <li>Go microservices handling donation transactions, orchestration between services, and keeping data in step across 5+ of them.</li>
+          <li>Wrote the API contracts for the payment integrations and the service-to-service calls.</li>
+        </ul>
+        <div class="tags"><span>Go</span><span>Microservices</span><span>Payment Gateway</span></div>
+      </article>
+
+      <article class="reveal">
+        <h3>Badr</h3>
+        <p class="kind">Healthcare management system</p>
+        <ul>
+          <li>Backend for vaccine scheduling and stock management, plus the patient data flows around them.</li>
+          <li>Held one API contract style across the components, so adding another didn't mean inventing a new convention.</li>
+        </ul>
+        <div class="tags"><span>Go</span><span>REST API</span><span>PostgreSQL</span></div>
+      </article>
+
+      <article class="reveal">
+        <h3>Bee Company</h3>
+        <p class="kind">Company profile site &middot; Jan &ndash; Feb 2020</p>
+        <ul>
+          <li>Company profile site in Laravel. Public pages plus a small admin area so staff could edit the content themselves.</li>
+          <li>Built during my time at Politeknik Negeri Malang.</li>
+        </ul>
+        <div class="tags"><span>Laravel</span><span>PHP</span></div>
+      </article>
+
+      <article class="reveal">
+        <h3>Utsman Foundation</h3>
+        <p class="kind">Company profile site &middot; Jan &ndash; Feb 2020</p>
+        <ul>
+          <li>Second Laravel build from the same stretch. Profile pages, contact form, and an admin area for updating content.</li>
+          <li>Built during my time at Politeknik Negeri Malang.</li>
+        </ul>
+        <div class="tags"><span>Laravel</span><span>PHP</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head"><span>02</span><h2>Work Experience</h2></div>
+    <div class="timeline">
+
+      <div class="job reveal">
+        <div class="when">Jul 2024 &ndash; Present</div>
+        <h3>Backend Developer</h3>
+        <div class="where">Venturo (Contract) &middot; Malang</div>
+        <ul>
+          <li>Own systems end to end: schema and API design, the release, then monitoring and the long tail of maintenance.</li>
+          <li>Built RESTful APIs and microservices in Go (Golang) with the Echo framework. Average response time came down <b>~40%</b> after tuning the slow PostgreSQL queries, adding the indexes that were missing, and fixing how the data was being fetched.</li>
+          <li>Pushed throughput up <b>~30%</b> by moving work onto concurrent processing and tightening resource use across services.</li>
+          <li>Keep three projects on Repository Pattern and Hexagonal Architecture, so the code stays testable and easy to hand over.</li>
+          <li>Integrated RAG (Retrieval Augmented Generation) pipelines and payment gateway APIs.</li>
+          <li>Production incidents dropped <b>~50%</b> after I reworked the logging, the monitoring dashboards, and unit and integration test coverage.</li>
+          <li>Built a central activity log for user and system events across the apps, so anyone debugging could see what happened and when.</li>
+          <li>Built the billing system: usage tracking, the billing runs, and the integration with the rest of the backend.</li>
+          <li>Run code review across the three projects and set the standards we hold to, which shortened review turnaround.</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <div class="when">Nov 2022 &ndash; Jun 2024</div>
+        <h3>Backend Developer</h3>
+        <div class="where">Aitindo (Contract) &middot; Banten</div>
+        <ul>
+          <li>Started the backend from nothing: schema design, the REST API, and the automated CI/CD pipeline a team of 3+ engineers deployed through.</li>
+          <li>Shipped roadmap features alongside the product team and the frontend engineer.</li>
+          <li>Integrated third-party payment gateways for in-app transactions.</li>
+          <li>Tracked down the production bugs that were actually hurting us. Error rates across core services fell <b>~35%</b> and uptime improved.</li>
+          <li>Wrote a small internal monitoring app so we could watch the main application's health, performance and error rates as they happened, giving the team real-time observability.</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <div class="when">Feb 2022 &ndash; Nov 2022</div>
+        <h3>Junior Backend Developer</h3>
+        <div class="where">PT Okejek Kreasi Indonesia &middot; Malang</div>
+        <ul>
+          <li>Built RESTful APIs for a high-traffic mobile app and brought response times down by refactoring them and reworking the queries underneath.</li>
+          <li>Integrated third-party payment gateways to handle in-app transactions.</li>
+          <li>Shipped features with a cross-functional team, on the coding standards and git workflow already in place.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><span>03</span><h2>Technical Skills</h2></div>
+    <div class="skills reveal">
+      <div><h3>Languages</h3><p>Go (primary), Python, PHP, TypeScript, JavaScript</p></div>
+      <div><h3>Frameworks</h3><p>Echo (Go), Laravel, HonoJS, AngularJS, gRPC</p></div>
+      <div><h3>Architecture</h3><p>RESTful API, Microservices, Repository Pattern, Monolithic and Hexagonal Architecture</p></div>
+      <div><h3>Databases</h3><p>PostgreSQL, MySQL, MongoDB, Redis</p></div>
+      <div><h3>Tools</h3><p>Docker, Git, CI/CD</p></div>
+      <div><h3>Practices</h3><p>Database query optimisation, concurrent processing, unit &amp; integration testing, code review</p></div>
+      <div><h3>Integrations</h3><p>Payment Gateway APIs, RAG pipelines, AI workflow automation</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head"><span>04</span><h2>Education</h2></div>
+    <div class="timeline">
+      <div class="job reveal">
+        <div class="when">2017 &ndash; 2021</div>
+        <h3>Diploma in Information Technology (D4)</h3>
+        <div class="where">Politeknik Negeri Malang</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head"><span>05</span><h2>Contact</h2></div>
+    <div class="contact-card reveal">
+      <h3>Get in touch</h3>
+      <p>
+        I'm looking for backend or full-stack work, and I need <strong>482 sponsorship</strong>. If that's
+        something your team can do, I'd like to hear about the role. Email reaches me fastest.
+      </p>
+      <div class="links">
+        <a class="btn primary" href="mailto:dimasekaadinandra@gmail.com">dimasekaadinandra@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/dimas-eka-adinandra-3b30071b9/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/dimasekaadinandra25" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Dimas Eka Adinandra</span>
+  </div>
+</footer>
+
+<script>
+// theme: stored choice wins, otherwise follow the OS
+(function () {
+  var root = document.documentElement;
+  try {
+    var saved = localStorage.getItem('theme');
+    if (saved) root.setAttribute('data-theme', saved);
+  } catch (e) {}
+
+  document.getElementById('theme').addEventListener('click', function () {
+    var dark = matchMedia('(prefers-color-scheme: dark)').matches;
+    var current = root.getAttribute('data-theme') || (dark ? 'dark' : 'light');
+    var next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+})();
+
+// reveal on scroll + nav shadow + active section
+(function () {
+  var nav = document.getElementById('nav');
+  addEventListener('scroll', function () {
+    nav.classList.toggle('stuck', scrollY > 8);
+  }, { passive: true });
+
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+
+  var show = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); show.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) { show.observe(el); });
+
+  var links = {};
+  document.querySelectorAll('nav .nav-link').forEach(function (a) {
+    links[a.getAttribute('href').slice(1)] = a;
+  });
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var a = links[e.target.id];
+      if (a && e.isIntersecting) {
+        Object.keys(links).forEach(function (k) { links[k].classList.remove('active'); });
+        a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  Object.keys(links).forEach(function (id) {
+    var s = document.getElementById(id);
+    if (s) spy.observe(s);
+  });
+})();
+</script>
+
+</body>
+</html>
