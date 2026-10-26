@@ -278,34 +278,6 @@ section { padding: 4.5rem 0; border-top: 1px solid var(--line-soft); }
   margin: 0; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em;
 }
 
-/* ---------- projects ---------- */
-.grid { display: grid; gap: 1.125rem; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); }
-article {
-  position: relative;
-  display: flex; flex-direction: column;
-  padding: 1.5rem;
-  background: var(--card);
-  border: 1px solid var(--line); border-radius: 0.875rem;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-article:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
-article h3 { margin: 0 0 0.25rem; font-size: 1.125rem; font-weight: 650; }
-article .kind { margin: 0 0 1rem; color: var(--faint); font-size: 0.8125rem; font-weight: 500; }
-article ul { margin: 0 0 1.25rem; padding: 0; list-style: none; color: var(--muted); font-size: 0.9375rem; }
-article li { position: relative; padding-left: 1.125rem; margin-bottom: 0.625rem; }
-article li::before {
-  content: ""; position: absolute; left: 0; top: 0.6875rem;
-  width: 0.3125rem; height: 0.3125rem; border-radius: 50%;
-  background: var(--accent); opacity: 0.55;
-}
-.tags { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-top: auto; }
-.tags span {
-  padding: 0.1875rem 0.5625rem; border-radius: 0.375rem;
-  background: var(--accent-soft); color: var(--accent);
-  font-family: var(--mono); font-size: 0.6875rem; font-weight: 500;
-}
-
 /* ---------- timeline ---------- */
 .timeline { position: relative; padding-left: 1.75rem; }
 .timeline::before {
@@ -400,30 +372,23 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content
   .sec-head h2 { font-size: 12pt; text-transform: uppercase; letter-spacing: 0.04em; }
 
   /* one column, no cards, no decoration */
-  .grid, .skills { display: block; gap: 0; background: none; border: 0; border-radius: 0; }
-  article, .contact-card {
+  .skills { display: block; gap: 0; background: none; border: 0; border-radius: 0; }
+  .contact-card {
     padding: 0; margin-bottom: 0.75rem;
     background: none !important; border: 0; border-radius: 0; box-shadow: none !important;
     break-inside: avoid;
   }
-  article h3, .job h3 { font-size: 11pt; }
-  article .kind, .job .where, .job .when { color: #000 !important; }
+  .job h3 { font-size: 11pt; }
+  .job .where, .job .when { color: #000 !important; }
 
   .timeline { padding-left: 0; }
   .timeline::before, .job::before { display: none; }
   .job { padding-bottom: 0.75rem; break-inside: avoid; }
   .job .when { font-family: inherit; font-size: 10pt; }
 
-  article ul, .job ul { color: #000 !important; }
-  article li, .job li { padding-left: 0.9rem; margin-bottom: 0.15rem; }
-  article li::before, .job li::before { background: #000; opacity: 1; top: 0.5rem; }
-
-  .tags { margin-top: 0.25rem; }
-  .tags span {
-    padding: 0; margin-right: 0.5rem;
-    background: none !important; color: #000 !important; font-family: inherit; font-size: 9.5pt;
-  }
-  .tags span::after { content: ""; }
+  .job ul { color: #000 !important; }
+  .job li { padding-left: 0.9rem; margin-bottom: 0.15rem; }
+  .job li::before { background: #000; opacity: 1; top: 0.5rem; }
 
   .skills > div { display: block; padding: 0 0 0.25rem; background: none; }
   .skills h3 { display: inline; font-family: inherit; font-size: 10.5pt; color: #000 !important; text-transform: none; }
@@ -442,7 +407,6 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content
 <nav id="nav">
   <div class="wrap">
     <a class="brand" href="#top"><span class="mark">DA</span>Dimas Eka Adinandra</a>
-    <a class="nav-link" href="#work">Projects</a>
     <a class="nav-link" href="#experience">Experience</a>
     <a class="nav-link" href="#skills">Skills</a>
     <a class="nav-link" href="#contact">Contact</a>
@@ -505,71 +469,9 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content
   </div>
 </header>
 
-<section id="work">
-  <div class="wrap">
-    <div class="sec-head"><span>01</span><h2>Projects</h2></div>
-    <div class="grid">
-
-      <article class="reveal">
-        <h3>Cavos</h3>
-        <p class="kind">Call operation platform with AI &middot; Jan &ndash; Oct 2026</p>
-        <ul>
-          <li>Emotion recognition for the automated QA flow, so roughly 60% of customer interactions get reviewed without anyone listening in.</li>
-          <li>A RAG system over internal documents that answers with context, scoring ~70% accuracy on our evaluation set.</li>
-          <li>A central activity log for user and system events across the apps, so anyone debugging could see what happened and when.</li>
-          <li>The billing side: usage tracking, the billing runs themselves, and the integration with the other services.</li>
-        </ul>
-        <div class="tags"><span>Go</span><span>Python</span><span>AI</span><span>RAG</span><span>Billing</span></div>
-      </article>
-
-      <article class="reveal">
-        <h3>Lazisnu</h3>
-        <p class="kind">Donation &amp; payment platform &middot; Jul 2024 &ndash; Aug 2025</p>
-        <ul>
-          <li>Go microservices handling donation transactions, orchestration between services, and keeping data in step across 5+ of them.</li>
-          <li>Wrote the API contracts for the payment integrations and the service-to-service calls.</li>
-          <li>Payment gateway integration covering multiple payment methods, with transaction status updated in real time.</li>
-        </ul>
-        <div class="tags"><span>Go</span><span>Microservices</span><span>Payment Gateway</span></div>
-      </article>
-
-      <article class="reveal">
-        <h3>Badr</h3>
-        <p class="kind">Healthcare management system &middot; Aug &ndash; Dec 2025</p>
-        <ul>
-          <li>Backend for vaccine scheduling and stock management, plus the patient data flows around them.</li>
-          <li>Held one API contract style across the components, so adding another didn't mean inventing a new convention.</li>
-        </ul>
-        <div class="tags"><span>Go</span><span>REST API</span><span>PostgreSQL</span></div>
-      </article>
-
-      <article class="reveal">
-        <h3>Bee Company</h3>
-        <p class="kind">Company profile site &middot; Jan &ndash; Feb 2020</p>
-        <ul>
-          <li>Company profile site in Laravel. Public pages plus a small admin area so staff could edit the content themselves.</li>
-          <li>Built during my time at Politeknik Negeri Malang.</li>
-        </ul>
-        <div class="tags"><span>Laravel</span><span>PHP</span></div>
-      </article>
-
-      <article class="reveal">
-        <h3>Utsman Foundation</h3>
-        <p class="kind">Company profile site &middot; Jan &ndash; Feb 2020</p>
-        <ul>
-          <li>Second Laravel build from the same stretch. Profile pages, contact form, and an admin area for updating content.</li>
-          <li>Built during my time at Politeknik Negeri Malang.</li>
-        </ul>
-        <div class="tags"><span>Laravel</span><span>PHP</span></div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
 <section id="experience">
   <div class="wrap">
-    <div class="sec-head"><span>02</span><h2>Work Experience</h2></div>
+    <div class="sec-head"><span>01</span><h2>Work Experience</h2></div>
     <div class="timeline">
 
       <div class="job reveal">
@@ -577,69 +479,69 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content
         <h3>Backend Developer</h3>
         <div class="where">Venturo (Contract) &middot; Malang</div>
         <ul>
-          <li>Own systems end to end: schema and API design, the release, then monitoring and the long tail of maintenance.</li>
-          <li>Built RESTful APIs and microservices in Go (Golang) with the Echo framework. Average response time came down <b>~20%</b> after tuning the slow PostgreSQL queries, adding the indexes that were missing, and fixing how the data was being fetched.</li>
-          <li>Pushed throughput up <b>~15%</b> by moving work onto concurrent processing and tightening resource use across services.</li>
-          <li>Keep three concurrent projects on Repository Pattern and Hexagonal Architecture, so the code stays testable and easy to hand over.</li>
-          <li>Integrated RAG (Retrieval Augmented Generation) pipelines and payment gateway APIs.</li>
-          <li>Lead code review across the three projects and set the standards we hold to, which shortened review turnaround.</li>
+          <li>Designed and maintained systems across the full software development lifecycle, from system design and API architecture to production monitoring and long-term maintenance.</li>
+          <li>Architected and shipped RESTful APIs and microservices using Go and Echo, reducing average API response time by ~20% through PostgreSQL query tuning, indexing strategies, and efficient data access patterns.</li>
+          <li>Increased system throughput by ~15% by implementing concurrent processing and optimising resource utilisation across multiple backend services.</li>
+          <li>Applied clean architecture principles (Repository Pattern, Hexagonal Architecture) to keep codebases modular, testable, and maintainable as products scaled across 3 concurrent active projects.</li>
+          <li>Integrated third-party systems including RAG pipelines and payment gateway APIs, enabling AI-powered features and secure payment flows.</li>
+          <li>Led code reviews and enforced coding standards across 3 concurrent active projects, improving team consistency and reducing review cycle time.</li>
         </ul>
       </div>
 
       <div class="job reveal">
         <div class="when">Jan 2026 &ndash; Oct 2026</div>
         <h3>Backend Developer</h3>
-        <div class="where">Cavos (Call Operation Platform with AI) &middot; Jakarta</div>
+        <div class="where">Cavos (Call Operation Platform with AI) &middot; Jakarta, Indonesia</div>
         <ul>
-          <li>Designed a central activity log for user and system events across the apps, for auditability and faster troubleshooting.</li>
-          <li>Built the billing system: usage tracking, the billing runs, and the integration with the rest of the backend.</li>
-          <li>Built emotion recognition for the automated QA flow, so <b>~60%</b> of customer interactions are reviewed without manual effort.</li>
-          <li>Shipped a RAG system over internal documents with <b>~70%</b> accuracy on evaluation tests.</li>
+          <li>Designed and implemented a centralized activity logging system to capture and track user and system activities across applications, improving auditability, troubleshooting, and operational visibility.</li>
+          <li>Designed and developed a billing system, supporting usage tracking, billing workflows, and integration with backend services to enable scalable and reliable payment operations.</li>
+          <li>Built an emotion recognition feature for an automated QA workflow, enabling ~60% of customer interactions to be reviewed without manual effort and surfacing service-quality issues faster.</li>
+          <li>Designed and deployed a Retrieval-Augmented Generation (RAG) system for internal documents, delivering context-aware answers with ~70% accuracy on evaluation tests.</li>
         </ul>
       </div>
 
       <div class="job reveal">
         <div class="when">Aug 2025 &ndash; Dec 2025</div>
         <h3>Backend Developer</h3>
-        <div class="where">Kementerian Kesehatan RI (Badr Healthcare Management System) &middot; Jakarta</div>
+        <div class="where">Kementerian Kesehatan RI (Badr Healthcare Management System) &middot; Jakarta, Indonesia</div>
         <ul>
-          <li>Backend services for vaccine scheduling and inventory management, plus the patient data flows around them.</li>
-          <li>Kept API contracts consistent across components, so services talk reliably and new ones slot in cleanly.</li>
+          <li>Developed backend services for vaccine scheduling and inventory management, supporting patient data workflows and healthcare logistics at scale.</li>
+          <li>Established consistent API contracts across system components to ensure reliable service communication and future extensibility.</li>
         </ul>
       </div>
 
       <div class="job reveal">
         <div class="when">Jul 2024 &ndash; Aug 2025</div>
         <h3>Full Stack Engineer</h3>
-        <div class="where">NU CARE LAZISNU (Donation &amp; Payment Platform) &middot; Jakarta</div>
+        <div class="where">NU CARE LAZISNU (Donation &amp; Payment Platform) &middot; Jakarta, Indonesia</div>
         <ul>
-          <li>Built a Go microservices backend for donation transactions, service orchestration and data consistency across 5+ services.</li>
-          <li>Designed the API contracts for payment integrations and service-to-service calls.</li>
-          <li>Integrated payment gateways with multiple payment methods and real-time transaction status updates.</li>
+          <li>Built a microservices-based backend in Go to handle donation transaction processing, service orchestration, and cross-service data consistency across 5+ independent services.</li>
+          <li>Designed and implemented clean API contracts for payment integrations and inter-service communication, ensuring reliability and maintainability.</li>
+          <li>Integrated third-party payment gateway APIs to enable secure, reliable payment flows, supporting multiple payment methods and real-time transaction status updates.</li>
         </ul>
       </div>
 
       <div class="job reveal">
         <div class="when">Nov 2022 &ndash; Jun 2024</div>
         <h3>Backend Developer</h3>
-        <div class="where">Aitindo (Contract) &middot; Tangerang, Banten</div>
+        <div class="where">Aitindo (Contract) &middot; Tangerang, Banten, Indonesia</div>
         <ul>
-          <li>Started the backend from nothing: schema design, the REST API, and the automated CI/CD pipeline a team of 3+ engineers deployed through.</li>
-          <li>Shipped roadmap features alongside the product team and the frontend engineer.</li>
-          <li>Integrated third-party payment gateways for in-app transactions.</li>
-          <li>Tracked down the production bugs that were actually hurting us. Error rates across core services fell <b>~35%</b> and uptime improved.</li>
-          <li>Wrote a small internal monitoring app so we could watch the main application's health, performance and error rates as they happened, giving the team real-time observability.</li>
+          <li>Built backend systems from the ground up, covering database schema design, REST API architecture, and automated CI/CD deployment pipelines, supporting a team of 3+ engineers.</li>
+          <li>Developed and shipped new features aligned with product roadmap requirements, collaborating with the product team and frontend engineer.</li>
+          <li>Integrated third-party payment gateway APIs to support secure in-app transactions.</li>
+          <li>Diagnosed and resolved critical production bugs, improving system uptime and reducing error rates by ~35% across core services.</li>
+          <li>Developed an internal monitoring sub-application providing real-time observability into application health, performance, and error rates.</li>
         </ul>
       </div>
 
       <div class="job reveal">
         <div class="when">Feb 2022 &ndash; Nov 2022</div>
         <h3>Backend Developer</h3>
-        <div class="where">PT Okejek Kreasi Indonesia &middot; Malang</div>
+        <div class="where">PT Okejek Kreasi Indonesia &middot; Malang, Indonesia</div>
         <ul>
-          <li>Built RESTful APIs for a high-traffic mobile app and brought response times down by refactoring them and reworking the queries underneath.</li>
-          <li>Integrated third-party payment gateways to handle in-app transactions.</li>
-          <li>Shipped features with a cross-functional team, on the coding standards and git workflow already in place.</li>
+          <li>Designed and built RESTful APIs for a high-traffic mobile application, improving code performance and reducing response latency through refactoring and query optimisation.</li>
+          <li>Integrated third-party payment gateway APIs to process in-app transactions reliably.</li>
+          <li>Implemented and shipped new features as part of a cross-functional team, following established coding standards and version control workflows.</li>
         </ul>
       </div>
 
@@ -649,7 +551,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content
 
 <section id="skills">
   <div class="wrap">
-    <div class="sec-head"><span>03</span><h2>Technical Skills</h2></div>
+    <div class="sec-head"><span>02</span><h2>Technical Skills</h2></div>
     <div class="skills reveal">
       <div><h3>Languages</h3><p>Go (primary), Python, PHP, TypeScript, JavaScript</p></div>
       <div><h3>Frameworks</h3><p>Echo (Go), Laravel, HonoJS, AngularJS, gRPC</p></div>
@@ -664,7 +566,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content
 
 <section id="education">
   <div class="wrap">
-    <div class="sec-head"><span>04</span><h2>Education</h2></div>
+    <div class="sec-head"><span>03</span><h2>Education</h2></div>
     <div class="timeline">
       <div class="job reveal">
         <div class="when">2017 &ndash; 2021</div>
@@ -677,7 +579,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content
 
 <section id="contact">
   <div class="wrap">
-    <div class="sec-head"><span>05</span><h2>Contact</h2></div>
+    <div class="sec-head"><span>04</span><h2>Contact</h2></div>
     <div class="contact-card reveal">
       <h3>Get in touch</h3>
       <p>
