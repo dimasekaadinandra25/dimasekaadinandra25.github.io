@@ -460,8 +460,8 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content
     <p class="role">Backend Software Engineer &middot; Go, Python, TypeScript</p>
     <p class="bio">
       I've spent <strong>4+ years</strong> on backend systems, mostly in Go (Golang). RESTful APIs and
-      microservices, a real-time voice pipeline, a healthcare platform, a few payment gateway
-      integrations. The work usually comes down to the same handful of things: PostgreSQL queries that
+      microservices, a real-time voice pipeline, a billing platform, a healthcare system, a few payment
+      gateway integrations, and AI features like RAG and emotion recognition. The work usually comes down to the same handful of things: PostgreSQL queries that
       don't crawl, services that stay up, and code the next person can change without breaking something.
       I pick up full-stack work in TypeScript and PHP when that's what gets a feature out the door.
     </p>
@@ -498,9 +498,9 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content
 
     <div class="stats reveal">
       <div><b>4+</b><small>Years on backend work</small></div>
-      <div><b>~40%</b><small>Faster API responses</small></div>
-      <div><b>~50%</b><small>Fewer production incidents</small></div>
-      <div><b>&lt;500ms</b><small>Voice pipeline latency</small></div>
+      <div><b>~20%</b><small>Faster API responses</small></div>
+      <div><b>~35%</b><small>Lower error rates</small></div>
+      <div><b>~60%</b><small>QA reviews automated</small></div>
     </div>
   </div>
 </header>
@@ -512,30 +512,30 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content
 
       <article class="reveal">
         <h3>Cavos</h3>
-        <p class="kind">Call operation platform with AI</p>
+        <p class="kind">Call operation platform with AI &middot; Jan &ndash; Oct 2026</p>
         <ul>
-          <li>Go and Python services that process voice in real time, staying under 500ms with plenty of calls running at once.</li>
-          <li>Split into microservices so the voice streams could scale sideways and one bad service didn't take the rest down with it.</li>
-          <li>Put an AI step into the QA review flow, which took roughly 60% of the manual review off the ops team.</li>
+          <li>Emotion recognition for the automated QA flow, so roughly 60% of customer interactions get reviewed without anyone listening in.</li>
+          <li>A RAG system over internal documents that answers with context, scoring ~70% accuracy on our evaluation set.</li>
           <li>A central activity log for user and system events across the apps, so anyone debugging could see what happened and when.</li>
           <li>The billing side: usage tracking, the billing runs themselves, and the integration with the other services.</li>
         </ul>
-        <div class="tags"><span>Go</span><span>Python</span><span>Microservices</span><span>Real-time</span><span>AI</span><span>Billing</span></div>
+        <div class="tags"><span>Go</span><span>Python</span><span>AI</span><span>RAG</span><span>Billing</span></div>
       </article>
 
       <article class="reveal">
         <h3>Lazisnu</h3>
-        <p class="kind">Donation &amp; payment platform</p>
+        <p class="kind">Donation &amp; payment platform &middot; Jul 2024 &ndash; Aug 2025</p>
         <ul>
           <li>Go microservices handling donation transactions, orchestration between services, and keeping data in step across 5+ of them.</li>
           <li>Wrote the API contracts for the payment integrations and the service-to-service calls.</li>
+          <li>Payment gateway integration covering multiple payment methods, with transaction status updated in real time.</li>
         </ul>
         <div class="tags"><span>Go</span><span>Microservices</span><span>Payment Gateway</span></div>
       </article>
 
       <article class="reveal">
         <h3>Badr</h3>
-        <p class="kind">Healthcare management system</p>
+        <p class="kind">Healthcare management system &middot; Aug &ndash; Dec 2025</p>
         <ul>
           <li>Backend for vaccine scheduling and stock management, plus the patient data flows around them.</li>
           <li>Held one API contract style across the components, so adding another didn't mean inventing a new convention.</li>
@@ -578,21 +578,51 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content
         <div class="where">Venturo (Contract) &middot; Malang</div>
         <ul>
           <li>Own systems end to end: schema and API design, the release, then monitoring and the long tail of maintenance.</li>
-          <li>Built RESTful APIs and microservices in Go (Golang) with the Echo framework. Average response time came down <b>~40%</b> after tuning the slow PostgreSQL queries, adding the indexes that were missing, and fixing how the data was being fetched.</li>
-          <li>Pushed throughput up <b>~30%</b> by moving work onto concurrent processing and tightening resource use across services.</li>
-          <li>Keep three projects on Repository Pattern and Hexagonal Architecture, so the code stays testable and easy to hand over.</li>
+          <li>Built RESTful APIs and microservices in Go (Golang) with the Echo framework. Average response time came down <b>~20%</b> after tuning the slow PostgreSQL queries, adding the indexes that were missing, and fixing how the data was being fetched.</li>
+          <li>Pushed throughput up <b>~15%</b> by moving work onto concurrent processing and tightening resource use across services.</li>
+          <li>Keep three concurrent projects on Repository Pattern and Hexagonal Architecture, so the code stays testable and easy to hand over.</li>
           <li>Integrated RAG (Retrieval Augmented Generation) pipelines and payment gateway APIs.</li>
-          <li>Production incidents dropped <b>~50%</b> after I reworked the logging, the monitoring dashboards, and unit and integration test coverage.</li>
-          <li>Built a central activity log for user and system events across the apps, so anyone debugging could see what happened and when.</li>
+          <li>Lead code review across the three projects and set the standards we hold to, which shortened review turnaround.</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <div class="when">Jan 2026 &ndash; Oct 2026</div>
+        <h3>Backend Developer</h3>
+        <div class="where">Cavos (Call Operation Platform with AI) &middot; Jakarta</div>
+        <ul>
+          <li>Designed a central activity log for user and system events across the apps, for auditability and faster troubleshooting.</li>
           <li>Built the billing system: usage tracking, the billing runs, and the integration with the rest of the backend.</li>
-          <li>Run code review across the three projects and set the standards we hold to, which shortened review turnaround.</li>
+          <li>Built emotion recognition for the automated QA flow, so <b>~60%</b> of customer interactions are reviewed without manual effort.</li>
+          <li>Shipped a RAG system over internal documents with <b>~70%</b> accuracy on evaluation tests.</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <div class="when">Aug 2025 &ndash; Dec 2025</div>
+        <h3>Backend Developer</h3>
+        <div class="where">Kementerian Kesehatan RI (Badr Healthcare Management System) &middot; Jakarta</div>
+        <ul>
+          <li>Backend services for vaccine scheduling and inventory management, plus the patient data flows around them.</li>
+          <li>Kept API contracts consistent across components, so services talk reliably and new ones slot in cleanly.</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <div class="when">Jul 2024 &ndash; Aug 2025</div>
+        <h3>Full Stack Engineer</h3>
+        <div class="where">NU CARE LAZISNU (Donation &amp; Payment Platform) &middot; Jakarta</div>
+        <ul>
+          <li>Built a Go microservices backend for donation transactions, service orchestration and data consistency across 5+ services.</li>
+          <li>Designed the API contracts for payment integrations and service-to-service calls.</li>
+          <li>Integrated payment gateways with multiple payment methods and real-time transaction status updates.</li>
         </ul>
       </div>
 
       <div class="job reveal">
         <div class="when">Nov 2022 &ndash; Jun 2024</div>
         <h3>Backend Developer</h3>
-        <div class="where">Aitindo (Contract) &middot; Banten</div>
+        <div class="where">Aitindo (Contract) &middot; Tangerang, Banten</div>
         <ul>
           <li>Started the backend from nothing: schema design, the REST API, and the automated CI/CD pipeline a team of 3+ engineers deployed through.</li>
           <li>Shipped roadmap features alongside the product team and the frontend engineer.</li>
@@ -604,7 +634,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content
 
       <div class="job reveal">
         <div class="when">Feb 2022 &ndash; Nov 2022</div>
-        <h3>Junior Backend Developer</h3>
+        <h3>Backend Developer</h3>
         <div class="where">PT Okejek Kreasi Indonesia &middot; Malang</div>
         <ul>
           <li>Built RESTful APIs for a high-traffic mobile app and brought response times down by refactoring them and reworking the queries underneath.</li>
